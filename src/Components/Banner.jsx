@@ -34,7 +34,7 @@ const Banner = () => {
             <h1 className="font-extrabold text-5xl relative z-10 my-4">
               Escape to Paradise: Your Dream <br /> Beach Vacation Awaits!
             </h1>
-            <p className="w-[30%] relative z-10 mb-4">
+            <p className="w-[35%] relative z-10 mb-4">
               Indulge in sun, sand, and relaxation on the shores of our pristine
               beach destinations. Let the sound of the waves soothe your soul
               and create unforgettable memories with loved ones
@@ -51,7 +51,7 @@ const Banner = () => {
               Unleash Your Adventurous Spirit: <br />
               Explore the Mountains!
             </h1>
-            <p className="w-[30%] relative z-10 mb-4">
+            <p className="w-[35%] relative z-10 mb-4">
               Embark on a journey of discovery amidst breathtaking mountain
               landscapes. Whether you seek thrilling hikes, serene nature walks,
               or adrenaline-pumping adventures, our mountain destinations offer
@@ -69,7 +69,7 @@ const Banner = () => {
               Embrace Urban Excitement: Experience <br /> City Life Like Never
               Before!
             </h1>
-            <p className="w-[30%] relative z-10 mb-4">
+            <p className="w-[35%] relative z-10 mb-4">
               Immerse yourself in the vibrant energy of bustling cities filled
               with culture, history, and endless possibilities. From iconic
               landmarks to hidden gems, our urban destinations promise an
