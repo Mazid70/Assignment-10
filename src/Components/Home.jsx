@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import FeatureTours from "./FeatureTours";
 import SelectOffer from "./SelectOffer";
 import SpotCard from "./SpotCard";
+import Discount from "./Discount";
 
 const Home = () => {
   const touristSpots = useLoaderData();
@@ -13,9 +14,12 @@ const Home = () => {
       <div className="bg-[#DBDDE1]">
         <FeatureTours></FeatureTours>
       </div>
-
       <SelectOffer></SelectOffer>
-      <div className="bg-[#DBDDE1] pt-10">
+      <div className="bg-[#DBDDE1]">
+      <Discount></Discount>
+      </div>
+      
+      <div className="pt-10">
         <h2 className="text-blue-900 text-center  font-bold text-xl mb-2">
           Popular Packages
         </h2>

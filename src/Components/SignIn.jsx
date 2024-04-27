@@ -4,9 +4,10 @@ import { FaLock, FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SignIn = () => {
-  // const{signIn,googleSingUp,facebookSingUp}=useContext()
+  const{signIn,googleSingUp,facebookSingUp}=useContext(AuthContext)
   const [visible, setVisible] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
