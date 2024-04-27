@@ -20,7 +20,9 @@ const FeatureTours = () => {
             5 Packages
           </button>
           <div className=" absolute bottom-1 text-white left-2 text-center ">
-            <h1 className="text-3xl font-extrabold animate__animated animate__backInUp">Bangladesh</h1>
+            <h1 className="text-3xl font-extrabold animate__animated animate__backInUp">
+              Bangladesh
+            </h1>
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">

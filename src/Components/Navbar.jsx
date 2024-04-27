@@ -102,7 +102,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="bg-blue-900 shadow-2xl fixed w-full top-0 z-50">
+    <nav className="bg-[#080a3c] shadow-2xl fixed w-full top-0 z-50">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -138,7 +138,11 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="tooltip tooltip-left mr-6" data-tip="hello">
-            <img className="h-14 w-14 rounded-full bg-white" src="https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png" alt="user" />
+            <img
+              className="h-14 w-14 rounded-full bg-white"
+              src="https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png"
+              alt="user"
+            />
           </div>
 
           <label className="flex cursor-pointer  text-white gap-2">
