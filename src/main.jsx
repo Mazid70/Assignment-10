@@ -8,6 +8,7 @@ import SignIn from './Components/SignIn.jsx'
 import AddTouristsSpot from './Components/AddTouristsSpot.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
 import SignUp from './Components/SignUp.jsx'
+import AllTouristSpot from './Components/AllTouristSpot.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -32,6 +33,11 @@ const router=createBrowserRouter([
       {
       path:"/add",
       element:<AddTouristsSpot></AddTouristsSpot>,
+
+    },
+      {
+      path:"/all",
+      element:<AllTouristSpot></AllTouristSpot>,
 
     }
   ]

@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { AuthContext } from "../Provider/AuthProvider";
+import { Drawer, Sidebar, TextInput } from "flowbite-react";
+import { HiLogin, HiPencil, HiSearch } from "react-icons/hi";
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const {user,logOut} = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => setIsOpen(false);
+  console.log(user)
   const [theme, setTheme] = useState("light");
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -11,7 +16,11 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-  console.log(theme);
+  const handleSignOut=()=>{
+    logOut()
+    .then()
+    .catch()
+  }
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
@@ -137,10 +146,10 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{Link}</ul>
         </div>
         <div className="navbar-end">
-          <div className="tooltip tooltip-left mr-6" data-tip="hello">
+          <div onClick={() => setIsOpen(true)} className="tooltip tooltip-left mr-6" data-tip={user?user.displayName:"user"}>
             <img
               className="h-14 w-14 rounded-full bg-white"
-              src="https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png"
+              src={user?user.photoURL:'https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png'}
               alt="user"
             />
           </div>
@@ -182,6 +191,80 @@ const Navbar = () => {
           </label>
         </div>
       </div>
+       {/* drawer  */}
+       <Drawer open={isOpen} onClose={handleClose} position="right">
+        <Drawer.Header title="User Profile" titleIcon={() => <></>} />
+        <Drawer.Items>
+          <Sidebar
+            aria-label="Sidebar with multi-level dropdown example"
+            className="[&>div]:bg-transparent [&>div]:p-0"
+          >
+            <div className="flex h-full flex-col justify-between py-2">
+              <div>
+                <form className="pb-3 md:hidden">
+                  <TextInput
+                    icon={HiSearch}
+                    type="search"
+                    placeholder="Search"
+                    required
+                    size={32}
+                  />
+                </form>
+                <Sidebar.Items>
+                  <Sidebar.ItemGroup className="flex flex-col items-center">
+                    <div
+                      className="h-14 w-14 cursor-pointer "
+                      onClick={() => setIsOpen(true)}
+                    >
+                      <img
+                        className="h-full w-full rounded-full border-2 border-black"
+                        src={
+                          user
+                            ? user.photoURL
+                            : "https://static.vecteezy.com/system/resources/previews/019/879/198/non_2x/user-icon-on-transparent-background-free-png.png"
+                        }
+                        alt=""
+                      />
+                    </div>
+                    <h1 className="font-semibold">
+                      {user ? user.displayName : ""}
+                    </h1>
+                    <h1 className="font-medium">
+                      {user ? user.email : ""}
+                    </h1>
+                    <h1 className="font-semibold">
+                      {user ? user.phoneNumber : ""}
+                    </h1>
+                    
+                    <div className="self-start">
+                      {user?<Sidebar.Item
+                        icon={HiLogin}
+                        onClick={handleSignOut}
+                      >
+                        Sign Out
+                      </Sidebar.Item>:<NavLink to='/signin'><Sidebar.Item
+                        icon={HiLogin}
+                        
+                      >
+                        Sign In
+                      </Sidebar.Item></NavLink>}
+                      {user?<NavLink to="/update">
+                      <Sidebar.Item
+                        icon={HiPencil}
+                      >
+                        Update Profile
+                      </Sidebar.Item>
+                      </NavLink>
+                      :""}
+                      
+                    </div>
+                  </Sidebar.ItemGroup>
+                </Sidebar.Items>
+              </div>
+            </div>
+          </Sidebar>
+        </Drawer.Items>
+      </Drawer>
     </nav>
   );
 };
