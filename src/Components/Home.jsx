@@ -7,7 +7,6 @@ import Discount from "./Discount";
 
 const Home = () => {
   const touristSpots = useLoaderData();
-  console.log(touristSpots);
   return (
     <div>
       <Banner></Banner>
