@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const SpotCard = ({ spot }) => {
   const {
+    _id,
     image,
     tourist_spot_name,
     average_cost,
@@ -26,9 +29,9 @@ const SpotCard = ({ spot }) => {
           <h1 className="text-gray-500 font-normal text-xl">{country_name}</h1>
         </div>
 
-        <button className="  text-xl  hover:text-blue-600 hover:underline hover:font-bold">
+      <Link to={`/details/${_id}`} ><button className="  text-xl  hover:text-blue-600 hover:underline hover:font-bold">
           View details
-        </button>
+        </button></Link> 
       </div>
     </div>
   );

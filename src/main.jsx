@@ -10,6 +10,7 @@ import AuthProvider from './Provider/AuthProvider.jsx'
 import SignUp from './Components/SignUp.jsx'
 import AllTouristSpot from './Components/AllTouristSpot.jsx'
 import MyTouristSpot from './Components/MyTouristSpot.jsx'
+import Details from './Components/Details.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -40,6 +41,12 @@ const router=createBrowserRouter([
       path:"/all",
       element:<AllTouristSpot></AllTouristSpot>,
       loader:()=>fetch('http://localhost:3000/userspot')
+
+    },
+      {
+      path:"/details/:id",
+      element:<Details></Details>,
+      loader:({params})=>fetch(`http://localhost:3000/spot/${params.id}`)
 
     },
       {
