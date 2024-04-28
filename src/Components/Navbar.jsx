@@ -75,7 +75,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/about"
+          to={user?`spot/${user.email}`:''}
           style={({ isActive }) => {
             return {
               fontWeight: isActive ? "bold" : "bold",
