@@ -57,7 +57,7 @@ const router=createBrowserRouter([
     },
       {
       path:"/all/details/:id",
-      element:<AllDetails></AllDetails>,
+      element:<PrivateRoute><AllDetails></AllDetails></PrivateRoute> ,
       loader:({params})=>fetch(`http://localhost:3000/userspot/${params.id}`)
 
     },

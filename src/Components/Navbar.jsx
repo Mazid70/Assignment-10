@@ -73,23 +73,8 @@ const Navbar = () => {
           Add Tourists Spot
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to={user?`spot/${user.email}`:''}
-          style={({ isActive }) => {
-            return {
-              fontWeight: isActive ? "bold" : "bold",
-              color: isActive ? "#ffcc00" : "#fff",
-              background: isActive ? "transparent" : "",
-              border: isActive ? "1px solid #ffcc00" : "",
-            };
-          }}
-        >
-          My List
-        </NavLink>
-      </li>
-
-      {!user ? (
+      
+{!user ? (
         <li>
           <NavLink
             to="/signin"
@@ -105,9 +90,19 @@ const Navbar = () => {
             Sign In
           </NavLink>
         </li>
-      ) : (
-        ""
-      )}
+      ) : <NavLink
+      to={`spot/${user.email}`}
+      style={({ isActive }) => {
+        return {
+          fontWeight: isActive ? "bold" : "bold",
+          color: isActive ? "#ffcc00" : "#fff",
+          background: isActive ? "transparent" : "",
+          border: isActive ? "1px solid #ffcc00" : "",
+        };
+      }}
+    >
+      My List
+    </NavLink>}
     </>
   );
   return (
