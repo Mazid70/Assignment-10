@@ -12,8 +12,10 @@ import AllTouristSpot from './Components/AllTouristSpot.jsx'
 import MyTouristSpot from './Components/MyTouristSpot.jsx'
 import Details from './Components/Details.jsx'
 
-import AllDetails from './AllDetails.jsx'
-import MyDetails from './MyDetails.jsx'
+import AllDetails from './Components/AllDetails.jsx'
+import MyDetails from './Components/MyDetails.jsx'
+import MySpotEdit from './Components/MySpotEdit.jsx'
+import PrivateRoute from './Components/PrivateRoute.jsx'
 
 const router=createBrowserRouter([
   {
@@ -38,7 +40,7 @@ const router=createBrowserRouter([
     },
       {
       path:"/add",
-      element:<AddTouristsSpot></AddTouristsSpot>,
+      element:  <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>  ,
 
     },
       {
@@ -49,7 +51,7 @@ const router=createBrowserRouter([
     },
       {
       path:"/details/:id",
-      element:<Details></Details>,
+      element:<PrivateRoute><Details></Details></PrivateRoute>  ,
       loader:({params})=>fetch(`http://localhost:3000/spot/${params.id}`)
 
     },
@@ -62,13 +64,19 @@ const router=createBrowserRouter([
      
       {
       path:"/spot/:email",
-      element:<MyTouristSpot></MyTouristSpot>,
+      element:<PrivateRoute><MyTouristSpot></MyTouristSpot></PrivateRoute>  ,
       loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}`)
 
     },
       {
-      path:"/spot/:email/:id",
+      path:"/myspot/:email/:id",
       element:<MyDetails></MyDetails>,
+      loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}/${params.id}`)
+
+    },
+      {
+      path:"/update/:email/:id",
+      element:<MySpotEdit></MySpotEdit>,
       loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}/${params.id}`)
 
     }

@@ -65,11 +65,13 @@ const MyTouristSpot = () => {
                 {spot.average_cost}
               </td>
               <td className="border-2 lg:p-5 text-center py-16  flex justify-between items-center text-2xl">
-                <Link to={user ? `/spot/${user.email}/${spot._id}` : ""}>
+                <Link to={user ? `/myspot/${user.email}/${spot._id}` : ""}>
                   {" "}
                   <FaEye />
-                </Link>{" "}
-                <FaPen />{" "}
+                </Link>
+                <Link to={user ? `/update/${user.email}/${spot._id}` : ""}>
+                <FaPen />
+                </Link>
                 <MdDelete
                   onClick={() => {
                     handleDelete(spot._id);
