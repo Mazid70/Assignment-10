@@ -11,6 +11,10 @@ import SignUp from './Components/SignUp.jsx'
 import AllTouristSpot from './Components/AllTouristSpot.jsx'
 import MyTouristSpot from './Components/MyTouristSpot.jsx'
 import Details from './Components/Details.jsx'
+
+import AllDetails from './AllDetails.jsx'
+import MyDetails from './MyDetails.jsx'
+
 const router=createBrowserRouter([
   {
     path:"/",
@@ -50,9 +54,22 @@ const router=createBrowserRouter([
 
     },
       {
+      path:"/all/details/:id",
+      element:<AllDetails></AllDetails>,
+      loader:({params})=>fetch(`http://localhost:3000/userspot/${params.id}`)
+
+    },
+     
+      {
       path:"/spot/:email",
       element:<MyTouristSpot></MyTouristSpot>,
-      loader:({params})=>fetch(`http://localhost:3000/userspot/${params.email}`)
+      loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}`)
+
+    },
+      {
+      path:"/spot/:email/:id",
+      element:<MyDetails></MyDetails>,
+      loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}/${params.id}`)
 
     }
   ]

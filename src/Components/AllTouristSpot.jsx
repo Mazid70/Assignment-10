@@ -1,17 +1,18 @@
 import { useLoaderData } from "react-router-dom";
-import SpotCard from "./SpotCard";
+
+import UserSpotCard from "./UserSpotCard";
 
 const AllTouristSpot = () => {
   const userTouristSpot = useLoaderData();
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 h-[90vh] container mx-auto mt-20">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 h-[100vh] container mx-auto mt-20">
       
-      <div className="h-[500px]">
+      
       {userTouristSpot.map((spot) => (
-        <SpotCard key={spot._id} spot={spot}></SpotCard>
+        <UserSpotCard key={spot._id} spot={spot}></UserSpotCard>
       ))}
-      </div>
+
     
     </div>
   );

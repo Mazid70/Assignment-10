@@ -1,61 +1,16 @@
 import { useContext } from "react";
-import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
-const AddTouristsSpot = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
-  const handleAddTouristSpot = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const image = form.image.value;
-    const tourists_spot_name = form.tourists_spot_name.value;
-    const country_name = form.country_name.value;
-    const location = form.location.value;
-    const short_description = form.short_description.value;
-    const average_cost = form.average_cost.value;
-    const seasonality = form.seasonality.value;
-    const travel_time = form.travel_time.value;
-    const total_visitors_per_year = form.total_visitors_per_year.value;
-    const user_email = form.user_email.value;
-    const user_name = form.user_name.value;
 
-    const newTouristSpot = {
-      image,
-      tourists_spot_name,
-      country_name,
-      location,
-      short_description,
-      average_cost,
-      seasonality,
-      travel_time,
-      total_visitors_per_year,
-      user_email,
-      user_name,
-    };
-    fetch("http://localhost:3000/userspot", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newTouristSpot),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-    Swal.fire({
-      title: "Success",
-      text: "Coffee added Successfully",
-      icon: "success",
-      confirmButtonText: "OK",
-    });
-  };
-  return (
-    <div className="  text-white  bg-no-repeat bg-cover bg-[url(https://wallpapercave.com/wp/wp9764008.jpg)]  min-h-screen flex justify-center items-center">
+const MySpotEdit = () => {
+    const{user}=useContext(AuthContext)
+    return (
+        <div className="  text-white  bg-no-repeat bg-cover bg-[url(https://wallpapercave.com/wp/wp9764008.jpg)]  min-h-screen flex justify-center items-center">
       <div className="border backdrop-blur-xl  w-full sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 p-6  rounded-lg shadow-xl">
         <h2 className="text-3xl text-center mb-6 font-bold ">
           Add Tourists Spot
         </h2>
-        <form onSubmit={handleAddTouristSpot} className="space-y-4">
+        <form onSubmit={handleUpdateTouristSpot} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block mb-1 ">Image URL:</label>
@@ -171,7 +126,7 @@ const AddTouristsSpot = () => {
           </div>
           <div>
             <button
-              type="submit"
+              type="Update"
               className="w-full bg-yellow-400 text-white py-3 rounded-lg "
             >
               Add
@@ -180,7 +135,7 @@ const AddTouristsSpot = () => {
         </form>
       </div>
     </div>
-  );
+    );
 };
 
-export default AddTouristsSpot;
+export default MySpotEdit;

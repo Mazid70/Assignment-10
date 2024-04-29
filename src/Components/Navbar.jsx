@@ -7,7 +7,7 @@ const Navbar = () => {
   const {user,logOut} = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => setIsOpen(false);
-  console.log(user)
+
   const [theme, setTheme] = useState("light");
   const handleToggle = (e) => {
     if (e.target.checked) {
