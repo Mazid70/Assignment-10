@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 const SpotCard = ({ spot }) => {
   const {
     _id,
@@ -29,12 +29,16 @@ const SpotCard = ({ spot }) => {
           <h1 className="text-gray-500 font-normal text-xl">{country_name}</h1>
         </div>
 
-      <Link to={`/details/${_id}`} ><button className="  text-xl  hover:text-blue-600 hover:underline hover:font-bold">
-          View details
-        </button></Link> 
+        <Link to={`/details/${_id}`}>
+          <button className="  text-xl  hover:text-blue-600 hover:underline hover:font-bold">
+            View details
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
-
+SpotCard.propTypes = {
+  spot: PropTypes.object,
+};
 export default SpotCard;

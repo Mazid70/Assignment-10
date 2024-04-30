@@ -1,11 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-
-import { HiLogin, HiPencil, HiSearch } from "react-icons/hi";
+import { HiLogin } from "react-icons/hi";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
   const [theme, setTheme] = useState("light");
   const handleToggle = (e) => {
     if (e.target.checked) {

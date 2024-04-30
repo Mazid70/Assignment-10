@@ -11,13 +11,13 @@ import SignUp from './Components/SignUp.jsx'
 import AllTouristSpot from './Components/AllTouristSpot.jsx'
 import MyTouristSpot from './Components/MyTouristSpot.jsx'
 import Details from './Components/Details.jsx'
-
 import AllDetails from './Components/AllDetails.jsx'
 import MyDetails from './Components/MyDetails.jsx'
 import MySpotEdit from './Components/MySpotEdit.jsx'
 import PrivateRoute from './Components/PrivateRoute.jsx'
 import Error from './Components/Error.jsx'
-
+import Country from './Components/Country.jsx'
+import CountryDetails from './Components/CountryDetails.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -68,6 +68,18 @@ const router=createBrowserRouter([
       path:"/spot/:email",
       element:<PrivateRoute><MyTouristSpot></MyTouristSpot></PrivateRoute>  ,
       loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/user/${params.email}`)
+
+    },
+      {
+      path:"/allspot/:country",
+      element:<Country></Country>  ,
+      loader:({params})=>fetch(`http://localhost:3000/allspot/${params.country}`)
+
+    },
+      {
+      path:"/allspot/:country/:id",
+      element:<CountryDetails></CountryDetails>,
+      loader:({params})=>fetch(`http://localhost:3000/allspot/${params.country}/${params.id}`)
 
     },
       {

@@ -26,7 +26,7 @@ const FeatureTours = () => {
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">
-            <Link to="">
+            <Link to="/allspot/Bangladesh">
               <FaLink className="text-blue-700 text-4xl" />
             </Link>
           </div>
@@ -46,7 +46,7 @@ const FeatureTours = () => {
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">
-            <Link to="">
+            <Link to="/allspot/Thailand">
               <FaLink className="text-blue-700 text-4xl" />
             </Link>
           </div>
@@ -66,7 +66,7 @@ const FeatureTours = () => {
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">
-            <Link to="">
+            <Link to="/allspot/Indonesia">
               <FaLink className="text-blue-700 text-4xl" />
             </Link>
           </div>
@@ -86,7 +86,7 @@ const FeatureTours = () => {
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">
-            <Link to="">
+            <Link to="/allspot/Malaysia">
               <FaLink className="text-blue-700 text-4xl" />
             </Link>
           </div>
@@ -106,7 +106,7 @@ const FeatureTours = () => {
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">
-            <Link to="">
+            <Link to="/allspot/Vietnam">
               <FaLink className="text-blue-700 text-4xl" />
             </Link>
           </div>
@@ -126,7 +126,7 @@ const FeatureTours = () => {
             <p>Starting from 1200$</p>
           </div>
           <div className="h-full flex items-center justify-center  w-full absolute  top-0  bg-black opacity-0 transition duration-300 ease-in-out hover:opacity-70">
-            <Link to="">
+            <Link to="/allspot/Cambodia">
               <FaLink className="text-blue-700 text-4xl" />
             </Link>
           </div>

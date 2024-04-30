@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-const Details = () => {
+const CountryDetails = () => {
   const spot = useLoaderData();
-  console.log(spot);
   const {
     image,
     tourist_spot_name,
@@ -62,4 +61,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default CountryDetails;

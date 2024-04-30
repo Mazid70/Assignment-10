@@ -5,20 +5,19 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 const SignIn = () => {
-  const{signIn,googleSingUp,facebookSingUp}=useContext(AuthContext)
+  const { signIn, googleSingUp, facebookSingUp } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-
   const signInGoogle = () => {
     googleSingUp()
       .then(() => {
         Swal.fire({
           title: "Good job!",
           text: "Sign In Success",
-          icon: "success"
+          icon: "success",
         });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
@@ -29,8 +28,7 @@ const SignIn = () => {
           icon: "error",
           title: "Oops...",
           text: "Sign In Failed",
-         
-        })
+        });
       });
   };
   const signInFacebook = () => {
@@ -40,7 +38,7 @@ const SignIn = () => {
           Swal.fire({
             title: "Good job!",
             text: "Sign In Success",
-            icon: "success"
+            icon: "success",
           });
           navigate(location?.state ? location.state : "/");
         }, 2000);
@@ -50,8 +48,7 @@ const SignIn = () => {
           icon: "error",
           title: "Oops...",
           text: "Sign In Failed",
-         
-        })
+        });
       });
   };
   const passwordToggle = () => {
@@ -67,25 +64,23 @@ const SignIn = () => {
         Swal.fire({
           title: "Good job!",
           text: "Sign In Success",
-          icon: "success"
+          icon: "success",
         });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 2000);
       })
       .catch(() => {
-
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "Sign In Failed",
-         
         });
       });
   };
 
   return (
-    <section className="-mt-16 flex items-center justify-center h-[100vh] bg-[url(https://wallpapercave.com/wp/wp9764008.jpg)] bg-no-repeat bg-cover">
+    <section className="-mt-16 flex items-center justify-center h-[100vh] bg-[url(assets/background.jpg)] bg-no-repeat bg-cover">
       {/* <Helmet><title>Sign In</title></Helmet> */}
       <div className="backdrop-blur lg:backdrop-blur-xl w-[420px] px-[30px] py-[40px] shadow-xl border rounded-xl text-white ">
         <form onSubmit={handleSignIn} className="space-y-5">

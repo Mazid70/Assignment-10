@@ -4,7 +4,7 @@ import { FaLock, FaUser, FaPhoneAlt } from "react-icons/fa";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 // import { Helmet } from "react-helmet";
 const SignUp = () => {
   const [visible, setVisible] = useState(false);
@@ -16,14 +16,12 @@ const SignUp = () => {
   const { createUser, setUpdateProfile } = useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();
-
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
     const email = form.get("email");
     const phone = form.get("phone");
     const image = form.get("image");
     const password = form.get("password");
-
     createUser(email, password)
       .then((result) => {
         setUpdateProfile(name, image, phone);
@@ -33,7 +31,7 @@ const SignUp = () => {
           Swal.fire({
             title: "Good job!",
             text: "Sign Up Success",
-            icon: "success"
+            icon: "success",
           });
           setTimeout(() => {
             navigate(onform);
@@ -45,13 +43,11 @@ const SignUp = () => {
           icon: "error",
           title: "Oops...",
           text: "Sign Up Failed",
-         
-        })
+        });
       });
   };
   return (
-    <section className=" -mb-10 flex items-center justify-center h-[100vh] bg-[url(https://wallpapercave.com/wp/wp9764008.jpg)] bg-no-repeat bg-cover">
-   
+    <section className=" -mb-10 flex items-center justify-center h-[100vh] bg-[url(assets/background.jpg)] bg-no-repeat bg-cover">
       {/* <Helmet><title>Sign up</title></Helmet> */}
       <div className="backdrop-blur lg:backdrop-blur-xl w-[420px] px-[30px] py-[40px] shadow-xl border rounded-xl text-white ">
         <form onSubmit={handleSignUp} className="space-y-5">

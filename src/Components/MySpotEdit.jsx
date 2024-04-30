@@ -67,7 +67,7 @@ const MySpotEdit = () => {
           });
       }
     return (
-        <div className="  text-white  bg-no-repeat bg-cover bg-[url(https://wallpapercave.com/wp/wp9764008.jpg)]  min-h-screen flex justify-center items-center">
+        <div className="  text-white  bg-no-repeat bg-cover bg-[url(assets/background.jpg)]  min-h-screen flex justify-center items-center">
       <div className="border backdrop-blur-xl  w-full sm:w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 p-6  rounded-lg shadow-xl">
         <h2 className="text-3xl text-center mb-6 font-bold ">
           Update Tourists Spot

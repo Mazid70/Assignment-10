@@ -9,8 +9,9 @@ const Discount = () => {
           <div className="text-3xl text-red-500">
             <BiPhoneCall />
           </div>
-          <div><p className="text-sm">BOOK TOUR NOW</p>
-          <h1 className="font-semibold text-lg">+88 01533 333 333</h1>
+          <div>
+            <p className="text-sm">BOOK TOUR NOW</p>
+            <h1 className="font-semibold text-lg">+88 01533 333 333</h1>
           </div>
         </div>
         <div className="absolute top-[20%] right-0 lg:right-32">

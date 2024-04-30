@@ -4,7 +4,6 @@ import FeatureTours from "./FeatureTours";
 import SelectOffer from "./SelectOffer";
 import SpotCard from "./SpotCard";
 import Discount from "./Discount";
-
 const Home = () => {
   const touristSpots = useLoaderData();
   return (
@@ -15,9 +14,9 @@ const Home = () => {
       </div>
       <SelectOffer></SelectOffer>
       <div className="bg-[#DBDDE1]">
-      <Discount></Discount>
+        <Discount></Discount>
       </div>
-      
+
       <div className="pt-10">
         <h2 className="text-blue-900 text-center  font-bold text-xl mb-2">
           Popular Packages

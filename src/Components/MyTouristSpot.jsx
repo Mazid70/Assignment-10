@@ -19,9 +19,12 @@ const MyTouristSpot = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/user/${user.email}/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-10-server-rouge-two.vercel.app/userspot/user/${user.email}/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -70,7 +73,7 @@ const MyTouristSpot = () => {
                   <FaEye />
                 </Link>
                 <Link to={user ? `/update/${user.email}/${spot._id}` : ""}>
-                <FaPen />
+                  <FaPen />
                 </Link>
                 <MdDelete
                   onClick={() => {

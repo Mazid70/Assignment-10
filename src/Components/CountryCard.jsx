@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-const UserSpotCard = ({ spot }) => {
+const CountryCard = ({ spot }) => {
   const {
     _id,
     image,
@@ -10,14 +10,12 @@ const UserSpotCard = ({ spot }) => {
     seasonality,
     country_name,
   } = spot;
-  console.log(_id);
   return (
     <div className="bg-white  border rounded-xl overflow-hidden">
       <img
         src={image}
         className="h-[260px] w-full rounded-t-xl z-0 transition-all duration-300 hover:scale-110"
       />
-
       <div className="p-10 w-[95%] space-y-3">
         <h1 className="font-bold text-2xl">{tourist_spot_name}</h1>
         <h1 className="font-bold text-2xl text-red-400">
@@ -29,8 +27,7 @@ const UserSpotCard = ({ spot }) => {
           <h1 className="text-gray-500 font-normal text-xl">{seasonality}</h1>
           <h1 className="text-gray-500 font-normal text-xl">{country_name}</h1>
         </div>
-
-        <Link to={`/all/details/${_id}`}>
+        <Link to={`/allspot/${country_name}/${_id}`}>
           <button className="  text-xl  hover:text-blue-600 hover:underline hover:font-bold">
             View details
           </button>
@@ -39,7 +36,7 @@ const UserSpotCard = ({ spot }) => {
     </div>
   );
 };
-UserSpotCard.propTypes = {
+CountryCard.propTypes = {
   spot: PropTypes.object,
 };
-export default UserSpotCard;
+export default CountryCard;

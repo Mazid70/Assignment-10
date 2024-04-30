@@ -17,7 +17,7 @@ const AllDetails = () => {
     user_name
   } = spot;
     return (
-        <div className="h-[100vh] flex justify-center items-center">
+        <div className="lg:h-[100vh] flex justify-center items-center">
       <div className="flex flex-col lg:flex-row border shadow-xl container lg:gap-20 ">
         <div className="flex-1 ">
           <img src={image} alt="" className="h-full"/>
