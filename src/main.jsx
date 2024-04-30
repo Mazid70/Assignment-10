@@ -16,16 +16,18 @@ import AllDetails from './Components/AllDetails.jsx'
 import MyDetails from './Components/MyDetails.jsx'
 import MySpotEdit from './Components/MySpotEdit.jsx'
 import PrivateRoute from './Components/PrivateRoute.jsx'
+import Error from './Components/Error.jsx'
 
 const router=createBrowserRouter([
   {
     path:"/",
     element:<App></App>,
+    errorElement:<Error></Error>,
     children:[
       {
       path:"/",
       element:<Home></Home>,
-      loader:()=>fetch('http://localhost:3000/spot')
+      loader:()=>fetch('https://assignment-10-server-rouge-two.vercel.app/spot')
 
     },
       {
@@ -46,38 +48,38 @@ const router=createBrowserRouter([
       {
       path:"/all",
       element:<AllTouristSpot></AllTouristSpot>,
-      loader:()=>fetch('http://localhost:3000/userspot')
+      loader:()=>fetch('https://assignment-10-server-rouge-two.vercel.app/userspot')
 
     },
       {
       path:"/details/:id",
       element:<PrivateRoute><Details></Details></PrivateRoute>  ,
-      loader:({params})=>fetch(`http://localhost:3000/spot/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/spot/${params.id}`)
 
     },
       {
       path:"/all/details/:id",
       element:<PrivateRoute><AllDetails></AllDetails></PrivateRoute> ,
-      loader:({params})=>fetch(`http://localhost:3000/userspot/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/${params.id}`)
 
     },
      
       {
       path:"/spot/:email",
       element:<PrivateRoute><MyTouristSpot></MyTouristSpot></PrivateRoute>  ,
-      loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/user/${params.email}`)
 
     },
       {
       path:"/myspot/:email/:id",
       element:<MyDetails></MyDetails>,
-      loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/user/${params.email}/${params.id}`)
 
     },
       {
       path:"/update/:email/:id",
       element:<MySpotEdit></MySpotEdit>,
-      loader:({params})=>fetch(`http://localhost:3000/userspot/user/${params.email}/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/user/${params.email}/${params.id}`)
 
     }
   ]

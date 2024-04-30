@@ -47,7 +47,7 @@ const MySpotEdit = () => {
           user_email,
           user_name,
         };
-        fetch(`http://localhost:3000/userspot/user/${user.email}/${_id}`, {
+        fetch(`https://assignment-10-server-rouge-two.vercel.app/userspot/user/${user.email}/${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

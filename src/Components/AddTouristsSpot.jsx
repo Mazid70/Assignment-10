@@ -33,7 +33,7 @@ const AddTouristsSpot = () => {
       user_email,
       user_name,
     };
-    fetch("http://localhost:3000/userspot", {
+    fetch("https://assignment-10-server-rouge-two.vercel.app/userspot", {
       method: "POST",
       headers: {
         "content-type": "application/json",

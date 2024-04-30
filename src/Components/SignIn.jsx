@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-
+import Swal from 'sweetalert2'
 const SignIn = () => {
   const{signIn,googleSingUp,facebookSingUp}=useContext(AuthContext)
   const [visible, setVisible] = useState(false);
@@ -15,20 +15,44 @@ const SignIn = () => {
   const signInGoogle = () => {
     googleSingUp()
       .then(() => {
+        Swal.fire({
+          title: "Good job!",
+          text: "Sign In Success",
+          icon: "success"
+        });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 2000);
       })
-      .catch(() => {});
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Sign In Failed",
+         
+        })
+      });
   };
   const signInFacebook = () => {
     facebookSingUp()
       .then(() => {
         setTimeout(() => {
+          Swal.fire({
+            title: "Good job!",
+            text: "Sign In Success",
+            icon: "success"
+          });
           navigate(location?.state ? location.state : "/");
         }, 2000);
       })
-      .catch(() => {});
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Sign In Failed",
+         
+        })
+      });
   };
   const passwordToggle = () => {
     setVisible(!visible);
@@ -40,11 +64,24 @@ const SignIn = () => {
     const password = form.get("password");
     signIn(email, password)
       .then(() => {
+        Swal.fire({
+          title: "Good job!",
+          text: "Sign In Success",
+          icon: "success"
+        });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 2000);
       })
-      .catch(() => {});
+      .catch(() => {
+
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Sign In Failed",
+         
+        });
+      });
   };
 
   return (

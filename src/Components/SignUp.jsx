@@ -4,7 +4,7 @@ import { FaLock, FaUser, FaPhoneAlt } from "react-icons/fa";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-
+import Swal from 'sweetalert2'
 // import { Helmet } from "react-helmet";
 const SignUp = () => {
   const [visible, setVisible] = useState(false);
@@ -30,14 +30,23 @@ const SignUp = () => {
         console.log(result.user);
 
         if (result.user) {
-          
+          Swal.fire({
+            title: "Good job!",
+            text: "Sign Up Success",
+            icon: "success"
+          });
           setTimeout(() => {
             navigate(onform);
           }, 2000);
         }
       })
       .catch(() => {
-      
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Sign Up Failed",
+         
+        })
       });
   };
   return (
