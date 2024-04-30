@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const handleAddTouristSpot = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -43,7 +42,7 @@ const AddTouristsSpot = () => {
       .then((data) => console.log(data));
     Swal.fire({
       title: "Success",
-      text: "Coffee added Successfully",
+      text: "TouristSpot added Successfully",
       icon: "success",
       confirmButtonText: "OK",
     });

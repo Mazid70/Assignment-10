@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-
 import Swal from 'sweetalert2'
 import { useLoaderData } from "react-router-dom";
 const MySpotEdit = () => {
@@ -59,7 +58,7 @@ const MySpotEdit = () => {
             if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'Success',
-                    text: 'Coffee Updated Successfully',
+                    text: 'TouristSpot Updated Successfully',
                     icon: 'success',
                     confirmButtonText: 'OK'
                   })

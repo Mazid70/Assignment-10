@@ -10,8 +10,8 @@ const UserSpotCard = ({ spot }) => {
     seasonality,
     country_name,
   } = spot;
-  console.log(_id);
-  return (
+  
+return (
     <div className="bg-white  border rounded-xl overflow-hidden">
       <img
         src={image}

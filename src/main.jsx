@@ -73,13 +73,13 @@ const router=createBrowserRouter([
       {
       path:"/allspot/:country",
       element:<Country></Country>  ,
-      loader:({params})=>fetch(`http://localhost:3000/allspot/${params.country}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/allspot/${params.country}`)
 
     },
       {
       path:"/allspot/:country/:id",
       element:<CountryDetails></CountryDetails>,
-      loader:({params})=>fetch(`http://localhost:3000/allspot/${params.country}/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-10-server-rouge-two.vercel.app/allspot/${params.country}/${params.id}`)
 
     },
       {
