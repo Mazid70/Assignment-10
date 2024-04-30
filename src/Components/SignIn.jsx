@@ -1,13 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import { FaLock, FaFacebook } from "react-icons/fa";
+import { FaLock, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 const SignIn = () => {
-  const { signIn, googleSingUp, facebookSingUp } = useContext(AuthContext);
+  const { signIn, googleSingUp, githubSingUp } = useContext(AuthContext);
   const [visible, setVisible] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,8 +31,8 @@ const SignIn = () => {
         });
       });
   };
-  const signInFacebook = () => {
-    facebookSingUp()
+  const signInGithub = () => {
+    githubSingUp()
       .then(() => {
         setTimeout(() => {
           Swal.fire({
@@ -148,12 +148,12 @@ const SignIn = () => {
           <FcGoogle className="text-2xl ml-6 mr-16" /> Sign in with Google{" "}
         </div>
         <div
-          onClick={signInFacebook}
+          onClick={signInGithub}
           className="mt-5 flex text-base font-bold items-center bg-white h-12 text-[#6c6c6f] rounded-full"
         >
           {" "}
-          <FaFacebook className=" text-blue-600 text-2xl ml-6 mr-16" /> Sign in
-          with Facebook{" "}
+          <FaGithub className=" text-black text-2xl ml-6 mr-16" /> Sign in with
+          Github{" "}
         </div>
         <h3 className="text-center mt-5">
           Do not have an account?{" "}
