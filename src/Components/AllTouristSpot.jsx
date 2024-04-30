@@ -1,7 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import UserSpotCard from "./UserSpotCard";
 import { useEffect, useState } from "react";
+import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
 const AllTouristSpot = () => {
+  const[loading,setloading]=useState(false);
+  setTimeout(()=>{
+setloading(true)
+  },1500)
   const userTouristSpot = useLoaderData();
   const [data, setData] = useState([...userTouristSpot]);
   const [sortBy, setSortBy] = useState();
@@ -21,6 +26,8 @@ const AllTouristSpot = () => {
   }, [userTouristSpot, sortBy]);
 
   return (
+    <>
+    {loading? 
     <div className="pt-10">
       <div className="flex justify-center ">
         <details className="dropdown">
@@ -37,12 +44,14 @@ const AllTouristSpot = () => {
           </ul>
         </details>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 mb-10 gap-10 container mx-auto mt-5">
-        {data.map((spot) => (
-          <UserSpotCard key={spot._id} spot={spot}></UserSpotCard>
-        ))}
-      </div>
+     <div className="grid lg:grid-cols-3 md:grid-cols-2 mb-10 gap-10 container mx-auto mt-5">
+      {data.map((spot) => (
+        <UserSpotCard key={spot._id} spot={spot}></UserSpotCard>
+      ))}
     </div>
+
+    </div>:<LoadingSpinner></LoadingSpinner>}
+    </>
   );
 };
 

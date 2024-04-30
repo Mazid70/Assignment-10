@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router-dom";
-
+import { useState } from "react";
+import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
 const AllDetails = () => {
+  const[loading,setloading]=useState(false);
+  setTimeout(()=>{
+setloading(true)
+  },1000)
     const spot = useLoaderData();
-  console.log(spot);
-  const {
+    const {
     image,
     tourist_spot_name,
     country_name,
@@ -16,8 +20,11 @@ const AllDetails = () => {
     user_email,
     user_name
   } = spot;
+  
     return (
-        <div className="lg:h-[100vh] flex justify-center items-center">
+
+      <>
+      {loading?<div className="lg:h-[100vh] flex justify-center items-center">
       <div className="flex flex-col lg:flex-row border shadow-xl container lg:gap-20 ">
         <div className="flex-1 ">
           <img src={image} alt="" className="h-full"/>
@@ -74,7 +81,13 @@ const AllDetails = () => {
           <button className="btn btn-accent text-white">Book Now</button>
         </div>
       </div>
-    </div>
+    </div>:<LoadingSpinner></LoadingSpinner>
+   
+  
+    
+}
+      </>
+        
     );
 };
 
