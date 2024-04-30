@@ -17,11 +17,11 @@ const Home = () => {
       {loading ? (
         <div>
           <Banner></Banner>
-          <div className="bg-[#DBDDE1]">
+          <div className="bg-[#DBDDE1] dark:bg-black">
             <FeatureTours></FeatureTours>
           </div>
           <SelectOffer></SelectOffer>
-          <div className="bg-[#DBDDE1]">
+          <div className="bg-[#DBDDE1] dark:bg-black">
             <Discount></Discount>
           </div>
 

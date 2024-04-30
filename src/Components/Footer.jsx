@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       id="animation"
-      className="md:flex-row md:flex-wrap flex-col lg:flex-row flex justify-evenly   gap-10 lg:space-y-20"
+      className="bg-[#080a3c] dark:bg-green-700 md:flex-row md:flex-wrap flex-col lg:flex-row flex justify-evenly   gap-10 lg:space-y-20"
     >
       <div className="lg:-mr-[300px] mt-20">
         <h1 className=" text-white font-bold lg:text-3xl text-xl ">

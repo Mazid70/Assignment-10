@@ -24,7 +24,7 @@ const Discount = () => {
       <div className="flex-1 space-y-5 p-5">
         <h1 className="font-extrabold text-5xl mb-8">
           Plan Your Trip with <br />
-          Trevily
+          WanderHub
         </h1>
         <p className="w-4/5 mb-8">
           There are many variations of passages of available but the majority

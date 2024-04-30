@@ -18,29 +18,29 @@ const SelectOffer = () => {
         <div className="absolute top-0 md:top-16 md:gap-8 lg:top-[30%] w-full grid grid-cols-3 lg:flex flex-col lg:flex-row  justify-around">
           <div className="text-blue-700 flex flex-col items-center gap-2 ">
             <HiBuildingLibrary className="text-7xl" />
-            <h1 className="text-black font-semibold text-sm ">
+            <h1 className="text-black dark:text-white font-semibold text-sm ">
               Different coutries
             </h1>
           </div>
           <div className="text-blue-700 flex flex-col items-center gap-2 ">
             <BiBusSchool className="text-7xl" />
-            <h1 className="text-black font-semibold text-sm ">Bus Tours</h1>
+            <h1 className="text-black dark:text-white font-semibold text-sm ">Bus Tours</h1>
           </div>
           <div className="text-blue-700 flex flex-col items-center gap-2 ">
             <IoFastFoodOutline className="text-7xl" />
-            <h1 className="text-black font-semibold text-sm ">Food Tours</h1>
+            <h1 className="text-black dark:text-white font-semibold text-sm ">Food Tours</h1>
           </div>
           <div className="text-blue-700 flex flex-col items-center gap-2 ">
             <PiSunHorizon className="text-7xl" />
-            <h1 className="text-black font-semibold text-sm ">Summer Rest</h1>
+            <h1 className="text-black dark:text-white font-semibold text-sm ">Summer Rest</h1>
           </div>
           <div className="text-blue-700 flex flex-col items-center gap-2 ">
             <LuShip className="text-7xl" />
-            <h1 className="text-black font-semibold text-sm ">Ship Cruises</h1>
+            <h1 className="text-black dark:text-white font-semibold text-sm ">Ship Cruises</h1>
           </div>
           <div className="text-blue-700 flex flex-col items-center gap-2 ">
             <LiaMountainSolid className="text-7xl" />
-            <h1 className="text-black font-semibold text-sm ">
+            <h1 className="text-black dark:text-white font-semibold text-sm ">
               Mountain Tours
             </h1>
           </div>
